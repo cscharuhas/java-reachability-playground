@@ -2,17 +2,17 @@ name: Example workflow AST SCANS
 on:
   workflow_dispatch:
   push:
-    branches: ["master"]
+    #branches: ["master"]
 jobs:
   AST-SAST-SCAN:
     runs-on: ubuntu-latest
-    permissions:
-      actions: read
-      contents: read
-      security-events: write
+    #permissions:
+    #  actions: read
+    #  contents: read
+    #  security-events: write
     steps:
       - name: Checkout Source Code
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@master
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/maven@master
         continue-on-error: true # To make sure that SARIF upload gets called
