@@ -28,10 +28,13 @@ jobs:
           name: snyk.sarif
           path: ./
           retention-days: 5
-      - name: Download a single artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: ./snyk.sarif
+      - name: Vulnerability Count
+          medium_count=$(cat snyk.sarif | grep "Medium severity" | wc -l)
+          echo "Medium Count is -" $medium_count 
+      #- name: Download a single artifact
+      #  uses: actions/download-artifact@v4
+      #  with:
+      #    name: ./snyk.sarif
       #- name: Check for Vulnerabilities
       #  id: Check_Vulnerabilities_Prahar
       #  run: |
