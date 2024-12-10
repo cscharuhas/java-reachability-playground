@@ -43,11 +43,11 @@ jobs:
 
   -name: Debricked scan
   steps:
-    - uses: actions/checkout@v4
-    - uses: debricked/actions/cache@v4
-    - uses: debricked/actions/resolve-non-docker@v4
-    - uses: debricked/actions/scan-non-docker@v4
-      env:
-        DEBRICKED_TOKEN: ${{ secrets.DEBRICKED_TOKEN }}
+  -uses: actions/checkout@v4
+  -uses: debricked/actions/cache@v4
+  -uses: debricked/actions/resolve-non-docker@v4
+  -uses: debricked/actions/scan-non-docker@v4
+  env:
+    DEBRICKED_TOKEN: ${{ secrets.DEBRICKED_TOKEN }}
 
 
