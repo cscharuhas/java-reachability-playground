@@ -24,29 +24,8 @@ jobs:
       java-version: 21
       distribution: "temurin"
 
-### SNYK SCAN and Results Upload to GitHub Code Scanning ###
+    -name: Echo
+    run: echo "Testing workflow build complete"
 
-#  -name: Example workflow for Maven using Snyk
-#   uses: snyk/actions/maven@master
-#   continue-on-error: true # To make sure that SARIF upload gets called
-#   env:
-##     SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-#   with:
-#     args: --sarif-file-output=snyk.sarif
- 
- # -name: Upload result to GitHub Code Scanning
- #  uses: github/codeql-action/upload-sarif@v2
- #  with:
- #    sarif_file: snyk.sarif
-
-### Debricked Scan ###
-
-  -name: Debricked scan
-  uses: actions/checkout@v4
-  uses: debricked/actions/cache@v4
-  uses: debricked/actions/resolve-non-docker@v4
-  uses: debricked/actions/scan-non-docker@v4
-  env:
-    DEBRICKED_TOKEN: ${{ secrets.DEBRICKED_TOKEN }}
-
+    
 
