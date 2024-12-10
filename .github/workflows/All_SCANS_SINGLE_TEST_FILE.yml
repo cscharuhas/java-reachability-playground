@@ -31,8 +31,25 @@ jobs:
       - name: Vulnerability Count
         id: Count_Vulnerabilities
         run: |
+          critical_count=$(cat snyk.sarif | grep "Critical severity" | wc -l)
+          high_count=$(cat snyk.sarif | grep "High severity" | wc -l)
           medium_count=$(cat snyk.sarif | grep "Medium severity" | wc -l)
-          echo "Medium Count is - $medium_count"
+          low_count=$(cat snyk.sarif | grep "Low severity" | wc -l)
+          if[$critical_count -gt 0] || [$high_count -gt 0]; then
+            echo "Critical Count is - $critical_count"
+            echo "High Count is - $high_count"
+            echo "Critical or High vulnerabilities detected. Failing the build"
+            echo ":::set-output name=fail_build::true"
+            exit 1
+          else
+            echo "Medium Count is - $medium_count"
+            echo "Low Count is - $low_count"
+            echo ":::set-output name=fail_build::false"
+          fi
+        env:
+          SARIF_FILE: ./snyk.sarif
+
+            
       #- name: Download a single artifact
       #  uses: actions/download-artifact@v4
       #  with:
