@@ -25,8 +25,8 @@ jobs:
       - name: Check for Vulnerabilities
         id: Check_Vulnerabilities_Prahar
         run: |
-         echo "Check for Criticals and High"
-         critical_count=$(jq '.results[] | select(.severity == "Critical")' ./snyk.sarif | wc -l)
-         if["$critical_count" -gt 0]
-          echo "Critical Vulnerabilities: $critical_count"
+         echo "Check for High Vulnerabilities"
+         high_count=$(jq '.results[] | select(.severity == "High")' ./snyk.sarif | wc -l)
+         if["$high_count" -gt 0]
+          echo "High Vulnerabilities: $high_count"
       
