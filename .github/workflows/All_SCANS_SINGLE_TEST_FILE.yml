@@ -29,8 +29,10 @@ jobs:
           path: ./
           retention-days: 5
       - name: Vulnerability Count
+        id: Count Vulnerabilities
+        run: |
           medium_count=$(cat snyk.sarif | grep "Medium severity" | wc -l)
-          echo "Medium Count is -" $medium_count 
+          echo "Medium Count is - $medium_count"
       #- name: Download a single artifact
       #  uses: actions/download-artifact@v4
       #  with:
