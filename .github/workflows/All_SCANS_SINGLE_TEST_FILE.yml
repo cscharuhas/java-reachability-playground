@@ -26,7 +26,7 @@ jobs:
         id: Check_Vulnerabilities_Prahar
         run: |
          echo "Check for Criticals and High"
-         critical_count=$(jq '.results[] | select(.severity == "critical")' ./snyk.sarif | wc-l
+         critical_count=$(jq '.results[] | select(.severity == "critical")' ./snyk.sarif | wc-l)
          if["$critical_count" -gt 0]
           echo "Critical Vulnerabilities: $critical_count"
       
