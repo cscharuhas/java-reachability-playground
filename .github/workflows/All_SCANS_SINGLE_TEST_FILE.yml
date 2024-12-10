@@ -22,12 +22,16 @@ jobs:
         uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: ./snyk.sarif
-      - name: Check for Vulnerabilities
-        id: Check_Vulnerabilities_Prahar
-        run: |
-         echo "Showing contents of results"
-         cat ./snyk.sarif
-         medium_count=$(jq 'select(.Severity == "MEDIUM")' ./snyk.sarif | wc -l)
-         echo "Medium Vulnerabilities: $medium_count"
+      - name: Download a single artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: ./snyk.sarif
+      #- name: Check for Vulnerabilities
+      #  id: Check_Vulnerabilities_Prahar
+      #  run: |
+      #   echo "Showing contents of results"
+      #   cat ./snyk.sarif
+      #   medium_count=$(jq 'select(.Severity == "MEDIUM")' ./snyk.sarif | wc -l)
+      #   echo "Medium Vulnerabilities: $medium_count"
         #if["$medium_count" -gt 0]
       
