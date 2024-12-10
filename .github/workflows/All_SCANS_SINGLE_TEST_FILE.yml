@@ -42,9 +42,6 @@ jobs:
 ### Debricked Scan ###
 
   -name: Debricked scan
-  workflow_dispatch:
-  push:
-    branches: ["main"]
   steps:
     - uses: actions/checkout@v4
     - uses: debricked/actions/cache@v4
