@@ -35,7 +35,7 @@ jobs:
           high_count=$(cat snyk.sarif | grep "High severity" | wc -l)
           medium_count=$(cat snyk.sarif | grep "Medium severity" | wc -l)
           low_count=$(cat snyk.sarif | grep "Low severity" | wc -l)
-          if[$critical_count -gt 0] || [$high_count -gt 0];then
+          if[$critical_count -gt 0] || [$high_count -gt 0]
             echo "Critical Count is - $critical_count"
             echo "High Count is - $high_count"
             echo "Critical or High vulnerabilities detected. Failing the build"
