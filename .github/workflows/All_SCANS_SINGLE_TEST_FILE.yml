@@ -26,8 +26,8 @@ jobs:
         id: Check_Vulnerabilities_Prahar
         run: |
          echo "Showing contents of results"
-         cat ./snyk.sarif
-        # high_count=$(jq 'select(.Severity == "High")' ./snyk.sarif | wc -l)
-        # if["$high_count" -gt 0]
-        #  echo "High Vulnerabilities: $high_count"
+        # cat ./snyk.sarif
+         medium_count=$(jq 'select(.Severity == "MEDIUM")' ./snyk.sarif | wc -l)
+         #if["$medium_count" -gt 0]
+         echo "Medium Vulnerabilities: $medium_count"
       
