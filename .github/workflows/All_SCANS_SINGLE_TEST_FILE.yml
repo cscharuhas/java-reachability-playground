@@ -1,15 +1,8 @@
 name: Example workflow AST SCANS
-on:
-  workflow_dispatch:
-  push:
-    #branches: ["master"]
+on: push
 jobs:
   AST-SAST-SCAN:
     runs-on: ubuntu-latest
-    #permissions:
-    #  actions: read
-    #  contents: read
-    #  security-events: write
     steps:
       - name: Checkout Source Code
       - uses: actions/checkout@master
