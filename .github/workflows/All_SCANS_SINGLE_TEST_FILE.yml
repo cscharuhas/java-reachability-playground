@@ -1,5 +1,7 @@
 name: Example workflow for Maven using Snyk
-on: push
+on: 
+  push: 
+    branches: ["master"]
 jobs:
   security:
     runs-on: ubuntu-latest
