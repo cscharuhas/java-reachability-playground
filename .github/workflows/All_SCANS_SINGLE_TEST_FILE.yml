@@ -1,24 +1,19 @@
-name: All Scans
+name: Testing GitHub actions for Application Security Testing Scans
 
 on:
-  pull_request:
-    branches: ["main"]
+  workflow_dispatch:
   push:
-    branches: ["main"]
+    branches: ["master"]
 
-  jobs:
-    All-Scans:
-    runs-on: ubuntu-latest
-    permissions:
+jobs:
+  runs-on: ubuntu-latest
+  permissions:
     actions: read
     contents: read
     security-events: write
-  
-    steps:
-      -name: Checkout Source Code
-      uses: actions/checkout@v4
-      -name: Echo
-      run: echo "Testing workflow build complete"
 
-    
-
+steps:
+  -name: Checkout source code
+  uses: actions/checkout@v4
+  -name: Run Echo Command
+  run: echo "Testing manually written workflow"
