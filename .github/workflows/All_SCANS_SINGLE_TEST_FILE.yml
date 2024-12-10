@@ -1,10 +1,9 @@
-name: Example workflow AST SCANS
+name: Example workflow for Maven using Snyk
 on: push
 jobs:
-  AST-SAST-SCAN:
+  security:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Source Code
       - uses: actions/checkout@master
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/maven@master
