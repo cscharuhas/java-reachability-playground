@@ -10,9 +10,9 @@ jobs:
       - name: Branch Details
         run: echo "GitHub Ref = ${{ github.ref }}"
              echo "GitHub Ref_Name = ${{ github.ref_name }}"
-      - name: Checkout the code
-        uses: actions/checkout@v3
-        with:
-          ref: github.event.workflow_run.head_branch
+      #- name: Checkout the code
+      #  uses: actions/checkout@v3
+      #  with:
+      #    ref: github.event.workflow_run.head_branch
             #echo "GitHub Workflow Branch Name = ${{ github.event.workflow_run.head_branch }}"
   
