@@ -3,7 +3,7 @@ name: Testing different actions from github
 on:
   workflow_run:
     workflows:
-      - simple-workflow
+      - Simple Workflow
     types:
       - completed
 
