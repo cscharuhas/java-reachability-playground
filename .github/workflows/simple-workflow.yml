@@ -1,0 +1,12 @@
+name: Simple Workflow
+
+on: push
+
+jobs:
+  Temporary_test_workflow:    
+    runs-on: ubuntu-latest
+    name: Executing Echo Test
+    steps:
+      run: |
+        echo "Echo 1"
+        echo "Echo 2"
