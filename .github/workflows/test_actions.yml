@@ -16,6 +16,7 @@ jobs:
         run: echo "GitHub Ref = ${{ github.ref }}"
              echo "GitHub Ref_Name = ${{ github.ref_name }}"
              echo "GitHub Workflow Branch Name = ${{ github.event.workflow_run.head_branch }}"
+             echo "GitHub Workflow Run Conclusion = ${{ github.event.workflow_run.conclusion }}"
       #- name: Checkout the code
       #  uses: actions/checkout@v3
       #  with:
