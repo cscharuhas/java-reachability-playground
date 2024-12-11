@@ -7,6 +7,5 @@ jobs:
     runs-on: ubuntu-latest
     name: Executing Echo Test
     steps:
-      run: |
-        echo "Echo 1"
-        echo "Echo 2"
+      - name: Echoing One
+        run: echo "Echo 1"
