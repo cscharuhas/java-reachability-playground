@@ -1,6 +1,11 @@
 name: Testing different actions from github
 
-on: push
+on:
+  workflow_run:
+    workflows:
+      - test_actions
+    types:
+      - completed
 
 jobs:
   Gathering_Information:
