@@ -1,6 +1,8 @@
 name: Simple Workflow
 
-on: push
+on: 
+  push:
+    branches: ["na_develop"]
 
 jobs:
   Temporary_test_workflow:    
