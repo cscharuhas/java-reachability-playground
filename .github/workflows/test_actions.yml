@@ -1,4 +1,4 @@
-name: Testing different actions from github
+name: Testing different actions from GitHub after creating a branch na_develop
 
 on:
   workflow_run:
