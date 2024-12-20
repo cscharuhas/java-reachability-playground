@@ -14,7 +14,10 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven cloud
+      working-directory: repo
       run:  |
-        wget https://github.com/fortify-ps/FortifyBugTrackerUtility/releases/download/4.14/FortifyBugTrackerUtility-4.14-dist.zip
-        unzip FortifyBugTrackerUtility-4.14-dist.zip
-        java -jar FortifyBugTrackerUtility-4.14.jar -configFile FoDToJira.xml --help
+        pwd
+      #  wget https://github.com/fortify-ps/FortifyBugTrackerUtility/releases/download/4.14/FortifyBugTrackerUtility-4.14-dist.zip
+      #  unzip FortifyBugTrackerUtility-4.14-dist.zip
+      #  java -jar FortifyBugTrackerUtility-4.14.jar -configFile FoDToJira.xml --help
+        
