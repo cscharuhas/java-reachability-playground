@@ -1,1 +1,20 @@
+name: FOD Bug Tracker Testing
 
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: maven
+    - name: Build with Maven cloud
+      run:  |
+        wget https://github.com/fortify-ps/FortifyBugTrackerUtility/releases/download/4.14/FortifyBugTrackerUtility-4.14-dist.zip
+        unzip FortifyBugTrackerUtility-4.14-dist.zip
+        java -jar FortifyBugTrackerUtility-4.14.jar -configFile FoDToJira.xml --help
