@@ -1,0 +1,1 @@
+This is a test file for checking if repository can be used to read a config file saved
