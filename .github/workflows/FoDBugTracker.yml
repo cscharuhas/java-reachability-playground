@@ -16,7 +16,7 @@ jobs:
     - name: Build with Maven cloud
       working-directory: repo
       run:  |
-        pwd
+        cat FODBugtrackerTest.txt
       #  wget https://github.com/fortify-ps/FortifyBugTrackerUtility/releases/download/4.14/FortifyBugTrackerUtility-4.14-dist.zip
       #  unzip FortifyBugTrackerUtility-4.14-dist.zip
       #  java -jar FortifyBugTrackerUtility-4.14.jar -configFile FoDToJira.xml --help
