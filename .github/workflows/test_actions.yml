@@ -13,7 +13,9 @@ jobs:
     name: Build Information
     steps:
       - name: Branch Details
-        run: echo "GitHub Ref = ${{ github.ref }}"
+        run: |
+             echo "GitHub Ref = ${{ github.repository }}"
+             echo "GitHub Ref = ${{ github.ref }}"
              echo "GitHub Ref_Name = ${{ github.ref_name }}"
              echo "GitHub Workflow Branch Name = ${{ github.event.workflow_run.head_branch }}"
              echo "GitHub Workflow Run Conclusion = ${{ github.event.workflow_run.conclusion }}"
