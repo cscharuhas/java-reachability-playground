@@ -15,7 +15,7 @@ jobs:
         cache: maven
     - name: Build with Maven cloud
       run:  |
-        cat /home/runner/work/java-reachability-playground/.github/workflows/simple-workflow.yml.disabled
+        cat /home/runner/work/java-reachability-playground/.github/workflows/simple-workflows.yml
       #  wget https://github.com/fortify-ps/FortifyBugTrackerUtility/releases/download/4.14/FortifyBugTrackerUtility-4.14-dist.zip
       #  unzip FortifyBugTrackerUtility-4.14-dist.zip
       #  java -jar FortifyBugTrackerUtility-4.14.jar -configFile FoDToJira.xml --help
