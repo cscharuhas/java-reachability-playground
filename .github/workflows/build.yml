@@ -3,7 +3,7 @@ name: Testing different actions from GitHub after creating a branch na_develop
 on:
   workflow_run:
     workflows:
-      - Simple Workflow
+      - FOD SAST Scan
     types:
       - completed
 
