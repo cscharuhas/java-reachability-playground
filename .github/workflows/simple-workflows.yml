@@ -1,4 +1,4 @@
-name: Simple Workflow
+name: FOD SAST Scan
 
 on: 
   push:
