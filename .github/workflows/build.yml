@@ -1,4 +1,4 @@
-name: Testing different actions from GitHub after creating a branch na_develop 
+name: Building Angular
 
 on:
   workflow_run:
