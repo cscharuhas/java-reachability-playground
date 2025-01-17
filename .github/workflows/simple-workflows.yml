@@ -2,7 +2,7 @@ name: Simple Workflow
 
 on: 
   push:
-    branches: ["na_develop"]
+    branches: ["master", "na_develop"]
 
 jobs:
   Temporary_test_workflow:    
