@@ -1,4 +1,4 @@
-name: Building Angular 
+ name: Building Angular 
 
 on:
 #  workflow_run:
