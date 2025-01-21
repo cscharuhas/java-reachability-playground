@@ -6,6 +6,12 @@ on:
       - FOD SAST Scan
     types:
       - completed
+  workflow_dispatch:
+    inputs:
+      Deploy-to:
+        type: environment
+        description: Select the environment
+        required: true
 
 jobs:
   on-success:
