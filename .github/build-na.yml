@@ -1,0 +1,40 @@
+name: Building Angular 
+
+#on:
+#  workflow_run:
+#    workflows:
+#      - FOD SAST Scan
+#    types:
+#      - completed
+on:
+  workflow_dispatch:
+    inputs:
+      Deploy-to:
+        type: environment
+        description: Select the environment
+        required: true
+
+jobs:
+  on-success:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    name: Build Information
+    steps:
+      - name: Branch Details
+        run: |
+             echo "GitHub Ref = ${{ github.repository }}"
+             echo "GitHub Ref = ${{ github.ref }}"
+             echo "GitHub Ref_Name = ${{ github.ref_name }}"
+             echo "GitHub Workflow Branch Name = ${{ github.event.workflow_run.head_branch }}"
+             echo "GitHub Workflow Run Conclusion = ${{ github.event.workflow_run.conclusion }}"
+  on-failure:
+    runs-on: ubuntu-latest
+    if: "${{ github.event.workflow_run.conclusion == 'failure' }}"
+    steps:
+      - run: echo 'The triggering workflow failed'
+      #- name: Checkout the code
+      #  uses: actions/checkout@v3
+      #  with:
+      #    ref: github.event.workflow_run.head_branch
+            #echo "GitHub Workflow Branch Name = ${{ github.event.workflow_run.head_branch }}"
+  
